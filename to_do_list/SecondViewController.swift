@@ -9,11 +9,18 @@
 import UIKit
 
 class SecondViewController: UIViewController {
+    
+    var toDoItems:[String] = []
 
     @IBOutlet weak var toDoItem: UITextField!
     
     
     @IBAction func addItem(sender: AnyObject) {
+        
+        toDoItems.append(toDoItem.text)
+        
+        println(toDoItems)
+        
     }
     
     
