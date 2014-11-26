@@ -8,7 +8,9 @@
 
 import UIKit
 
-class FirstViewController: UIViewController {
+var toDoItems:[String] = []
+
+class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,6 +20,24 @@ class FirstViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        return 5
+        
+    }
+    
+    
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        var cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "Cell")
+        
+        cell.textLabel.text = "to do items here"
+        
+        return cell 
+        
     }
 
 

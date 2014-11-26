@@ -10,7 +10,7 @@ import UIKit
 
 class SecondViewController: UIViewController {
     
-    var toDoItems:[String] = []
+    
 
     @IBOutlet weak var toDoItem: UITextField!
     
