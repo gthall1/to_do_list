@@ -24,7 +24,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 5
+        return toDoItems.count
         
     }
     
@@ -34,7 +34,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         
         var cell = UITableViewCell(style: UITableViewCellStyle.Default, reuseIdentifier: "Cell")
         
-        cell.textLabel.text = "to do items here"
+        cell.textLabel.text = toDoItems[indexPath.row]
         
         return cell 
         
