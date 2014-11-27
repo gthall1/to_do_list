@@ -19,12 +19,22 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
         
         toDoItems.append(toDoItem.text)
         
+        let fixedToDoItems = toDoItems
+        
+        NSUserDefaults.standardUserDefaults().setObject(fixedToDoItems, forKey: "toDoItems")
+        NSUserDefaults.standardUserDefaults().synchronize()
+        //saves data right away
+        
+        var storedtoDoItems : AnyObject! = NSUserDefaults.standardUserDefaults().objectForKey("toDoItems")
+        
+        println(storedtoDoItems)
+        
         self.view.endEditing(true)
         //hides keyboard if you click anywhere outside the text field (i think)
         //when its here keyboard disappears when you hit "add an item"
         //if you want it to stay out, see line 55
         
-        println(toDoItems)
+        
         
     }
     
