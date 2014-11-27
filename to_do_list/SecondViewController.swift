@@ -20,14 +20,14 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
         toDoItems.append(toDoItem.text)
         
         let fixedToDoItems = toDoItems
+        //creates an immutable variable
         
         NSUserDefaults.standardUserDefaults().setObject(fixedToDoItems, forKey: "toDoItems")
+        //sets user defaults to be equal to immutable variable
         NSUserDefaults.standardUserDefaults().synchronize()
-        //saves data right away
+        //saves data permanently
         
-        var storedtoDoItems : AnyObject! = NSUserDefaults.standardUserDefaults().objectForKey("toDoItems")
         
-        println(storedtoDoItems)
         
         self.view.endEditing(true)
         //hides keyboard if you click anywhere outside the text field (i think)

@@ -43,6 +43,22 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     }
     
     override func viewWillAppear(animated: Bool) {
+        //this sets everything right before the table appears
+        
+        if var storedtoDoItems : AnyObject = NSUserDefaults.standardUserDefaults().objectForKey("toDoItems") {
+            // just side not, AnyObject defaults to having a !, had to delete the ! to get it running properly
+            
+            
+            toDoItems = []
+            
+            for var i = 0; i < storedtoDoItems.count; ++i {
+                
+                toDoItems.append(storedtoDoItems[i] as NSString)
+                //converts storedtoDoItems into toDoItems
+            }
+            
+        }
+        //above basically says if user hasn't saved any to do items then don't try to retrieve them (new user or something like that)
         
         tasksTable?.reloadData()
         //makes 2nd view items appear in 1st view (linked tableview by right click and linking to tasksTable)
