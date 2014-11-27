@@ -41,6 +41,12 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         return cell 
         
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        
+        tasksTable?.reloadData()
+        
+    }
 
 
 }
