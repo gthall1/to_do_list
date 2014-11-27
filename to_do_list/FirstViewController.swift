@@ -11,6 +11,8 @@ import UIKit
 var toDoItems:[String] = []
 
 class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    @IBOutlet var tasksTable:UITableView?
 
     override func viewDidLoad() {
         super.viewDidLoad()
