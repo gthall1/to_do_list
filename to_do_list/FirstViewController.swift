@@ -64,6 +64,26 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
         //makes 2nd view items appear in 1st view (linked tableview by right click and linking to tasksTable)
         
     }
+    
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        
+        if (editingStyle == UITableViewCellEditingStyle.Delete) {
+            // is the user trying to delete something
+            
+            toDoItems.removeAtIndex(indexPath.row)
+            //indexPath.row just refers to the row that the user is trying to do something with
+            //this just removes it from the array, still need to remove it from NS user defaults
+            
+            let fixedToDoItems = toDoItems
+            NSUserDefaults.standardUserDefaults().setObject(fixedToDoItems, forKey: "toDoItems")
+            NSUserDefaults.standardUserDefaults().synchronize()
+            // sets user defaults == to the array
+            
+            tasksTable?.reloadData()
+            
+        }
+        
+    }
 
 
 }
