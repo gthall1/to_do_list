@@ -45,6 +45,7 @@ class FirstViewController: UIViewController, UITableViewDelegate, UITableViewDat
     override func viewWillAppear(animated: Bool) {
         
         tasksTable?.reloadData()
+        //makes 2nd view items appear in 1st view (linked tableview by right click and linking to tasksTable)
         
     }
 

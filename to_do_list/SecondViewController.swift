@@ -19,6 +19,11 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
         
         toDoItems.append(toDoItem.text)
         
+        self.view.endEditing(true)
+        //hides keyboard if you click anywhere outside the text field (i think)
+        //when its here keyboard disappears when you hit "add an item"
+        //if you want it to stay out, see line 55
+        
         println(toDoItems)
         
     }
@@ -46,8 +51,8 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
     
     override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         
-        self.view.endEditing(true)
-        //hides keyboard if you click anywhere outside the text field (i think)
+        
+        //self.view.endEditing(true) if its here keyboard does not disappear when you hit "add an item"
         
     }
     
